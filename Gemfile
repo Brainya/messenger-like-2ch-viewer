@@ -55,4 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # custom gems
 gem 'erb2haml'
 gem 'haml-rails'
+gem 'mechanize'
+gem 'nokogiri'
 gem 'font-awesome-rails'
