@@ -1,0 +1,54 @@
+.thread-header {
+  height: 2rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.reply-header {
+  font-weight: bold;
+}
+
+.reply-box {
+  margin: 10px 10px 0 11px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+
+.reply {
+  margin-bottom: 5px;
+  padding: 8px;
+  display: table;
+  background-color: #CCC;
+  border-radius: 10px;
+  position: relative;
+}
+
+.reply::before {
+  content: '';
+  position: absolute;
+  left: -9px;
+  top: 8px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid #CCC;
+  border-left: 10px solid transparent;
+}
+
+@media screen and (max-width: 1024px){
+  .thread-header {
+    font-size: 12px;
+    height: auto;
+    line-height: 1rem;
+  }
+  .reply {
+    word-break: break-word;
+  }
+  .reply-box {
+    font-size: 10px;
+  }
+}
