@@ -1,0 +1,37 @@
+.subback-header {
+  height: 2rem;
+  background-color: #777;
+  color: #FFF;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  a {
+    font-size: 17px;
+  }
+}
+
+.thread-box {
+  margin: 10px 30px 0;
+  padding-bottom: 20px;
+  a {
+    color: #FFF;
+    text-decoration: none;
+    &:hover{
+      color: #CCC;
+    }
+  }
+}
+
+.thread {
+}
+
+@media screen and (max-width:1024px){
+  .subback-header {
+    font-size: 13px;
+  }
+  .thread-box {
+    font-size: 12px;
+    margin: 0 3px;
+    padding-bottom: 0;
+  }
+}
