@@ -1,0 +1,7 @@
+.thread-header
+  %span
+    = @title
+.thread-header-rep-count
+.reply-box
+  - @replies.each do |reply|
+    = render 'reply', reply: reply
