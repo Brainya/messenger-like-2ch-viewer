@@ -1,0 +1,6 @@
+.subback-header
+  %span
+    = @subback_title
+.thread-box
+  - @threads.each do |thread|
+    = render 'thread', thread: thread
