@@ -2,16 +2,15 @@ class ThreadsController < ApplicationController
   def index
     agent = Mechanize.new
     url = get_url
-    agent.get(url) do |page|
-      html = Nokogiri::HTML(page.body)
-      @title = html.css('h1').text;
-      @replies = []
-      html.css('dt').zip(html.css('dd')).each do |dt, dd|
-        header = dt.text
-        text = dd.to_html
-        reply = {header: header, text: text}
-        @replies << reply
-      end
+    page = agent.get(url)
+    html = Nokogiri::HTML(page.body)
+    @title = html.css('h1').text;
+    @replies = []
+    html.css('dt').zip(html.css('dd')).each do |dt, dd|
+      header = dt.text
+      text = dd.to_html
+      reply = {header: header, text: text}
+      @replies << reply
     end
   end
 
