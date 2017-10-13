@@ -8,18 +8,28 @@ class SubbacksController < ApplicationController
     @threads = []
     is_removed_guide = false
     html.css('small#trad a').each do |thread_title|
-      if thread_title.attribute('class').try(:value) == 'sc' && !is_removed_guide
-        is_removed_guide = true
-        next
-      end
-      thread_title['href'] = thread_title.attribute('href').try(:value).sub(/l50/, '').insert(0, '/threads/anime2/')
+      thread_title['href'] = thread_title['href'].sub(/l50/, '').insert(0, "/threads/#{get_subback_server}/#{get_subback_id}/#{get_thread_id}")
       title = thread_title.to_html.sub(/\d{1,3}: ?/, '')
       thread = {title: title}
       @threads << thread
     end
   end
 
+  private
+
   def get_url
-    url = 'http://ikura.2ch.sc/' + params[:subback_id] + '/subback.html'
+    url = 'http://' + get_subback_server + '/' + get_subback_id + '/subback.html'
+  end
+
+  def get_subback_server
+    subback_server = params[:subback_server]
+  end
+
+  def get_subback_id
+    subback_id = params[:subback_id]
+  end
+
+  def get_thread_id
+    thread_id = params[:thread_id]
   end
 end
