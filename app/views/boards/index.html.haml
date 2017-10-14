@@ -1,2 +1,6 @@
-%h1 Boards#index
-%p Find me in app/views/boards/index.html.haml
+.board-header
+  %span
+    = 'logsock'
+.subback-box
+  - @subbacks.each do |subback|
+    = render 'subback', subback: subback
