@@ -14,7 +14,21 @@ class ThreadsController < ApplicationController
     end
   end
 
+  private
+
   def get_url
-    url = 'http://ikura.2ch.sc/test/read.cgi/' + params[:subback_id] + '/' + params[:thread_id]
+    url = 'http://' + get_subback_server + '/test/read.cgi/' + get_subback_id + '/' + get_thread_id
+  end
+
+  def get_subback_server
+    subback_server = params[:subback_server]
+  end
+
+  def get_subback_id
+    subback_id = params[:subback_id]
+  end
+
+  def get_thread_id
+    thread_id = params[:thread_id]
   end
 end
