@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'subbacks/:subback_id' => 'subbacks#index'
-  get 'threads/:subback_id/:thread_id' => 'threads#index'
+  root 'boards#index'
+
+  get 'subbacks/:subback_server/:subback_id' => 'subbacks#index', constraints: { subback_server: /[^\/]+/ }
+  get 'threads/:subback_server/:subback_id/:thread_id' => 'threads#index', constraints: { subback_server: /[^\/]+/ }
 end
