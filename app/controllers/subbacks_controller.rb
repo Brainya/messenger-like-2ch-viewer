@@ -6,7 +6,6 @@ class SubbacksController < ApplicationController
     html = Nokogiri::HTML(page.body)
     @subback_title = html.css('head title').text.sub('＠2ch掲示板＃スレッド一覧', '');
     @threads = []
-    is_removed_guide = false
     html.css('small#trad a').each do |thread_title|
       thread_title['href'] = thread_title['href'].sub(/l50/, '').insert(0, "/threads/#{get_subback_server}/#{get_subback_id}/#{get_thread_id}")
       title = thread_title.to_html.sub(/\d{1,3}: ?/, '')
