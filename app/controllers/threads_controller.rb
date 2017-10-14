@@ -8,7 +8,7 @@ class ThreadsController < ApplicationController
     @replies = []
     html.css('dt').zip(html.css('dd')).each do |dt, dd|
       header = dt.text
-      text = dd.to_html
+      text = dd.to_html.sub(/(<br>){2}$/, '')
       reply = {header: header, text: text}
       @replies << reply
     end
