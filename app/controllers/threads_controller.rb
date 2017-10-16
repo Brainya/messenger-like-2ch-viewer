@@ -8,8 +8,9 @@ class ThreadsController < ApplicationController
     @replies = []
     html.css('dt').zip(html.css('dd')).each do |dt, dd|
       header = dt.text
+      id = header.match('[0-9]+')
       text = dd.to_html.sub(/(<br>){2}$/, '')
-      reply = {header: header, text: text}
+      reply = {id: id, header: header, text: text}
       @replies << reply
     end
   end
