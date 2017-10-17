@@ -1,6 +1,6 @@
 .board-header
   %span
-    = 'logsock'
+    = @title
 .subback-box
   - @subbacks.each do |subback|
     = render 'subback', subback: subback
