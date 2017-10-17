@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
     url = 'http://2ch.sc/bbsmenu.html'
     page = agent.get(url)
     html = Nokogiri::HTML(page.body)
-    @title = 'logsock'
+    @title = 'Logsock'
     @subbacks = []
     html.css('small a').each do |subback_title|      
       subback_url = subback_title['href'].match('http(s)?://[a-z0-9.]*.2ch.sc/[a-z0-9]+').to_s
