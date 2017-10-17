@@ -8,7 +8,7 @@ class ThreadsController < ApplicationController
     @replies = []
     html.css('dt').zip(html.css('dd')).each do |dt, dd|
       header = dt.text
-      id = header.match('[0-9]+')
+      id = header.match(/\d+/)
       text = dd.to_html.sub(/(<br>){2}$/, '')
       text = text.gsub(/<a href([a-zA-Z0-9]|=|>|<|"|\.|\/|_|\\|\s)+&gt;&gt;[0-9]+<\/a>/, "<a href=##{id}>&gt;&gt;#{id}</a>")
       reply = {id: id, header: header, text: text}
