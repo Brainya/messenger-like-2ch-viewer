@@ -10,7 +10,11 @@ class ThreadsController < ApplicationController
       header = dt.text
       id = header.match(/\d+/)
       text = dd.to_html.sub(/(<br>){2}$/, '')
-      text = text.gsub(/<a href([a-zA-Z0-9]|=|>|<|"|\.|\/|_|\\|\s)+&gt;&gt;[0-9]+<\/a>/, "<a href=##{id}>&gt;&gt;#{id}</a>")
+      text = text.gsub(/<a href(\w|\d|=|>|<|"|\.|\/|_|\\|\s|-)+&gt;&gt;(\d+|\d+-\d+)<\/a>/) {
+        link_id = $2
+        link = (link_id.match(/-/) == nil ? link_id : link_id.gsub(/-\d+/, ''))
+        "<a href=##{link}>&gt;&gt;#{link_id}</a>"
+      }
       reply = {id: id, header: header, text: text}
       @replies << reply
     end
