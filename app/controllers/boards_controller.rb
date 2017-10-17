@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
       case subback_url
       when '' then
       when 'http://info.2ch.sc/guide' then # 2ch総合案内
+      when 'http://sweet.2ch.sc/headline' then # 新着ヘッドライン
       else
         subback_title['href'] = subback_title['href'].sub('http://', '').insert(0, 'subbacks/')
         title = subback_title.to_html
