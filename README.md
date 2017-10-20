@@ -1,24 +1,10 @@
-# README
+メッセンジャーライクな2chビューワ
+==
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Website
+[Logsock](https://logsock.herokuapp.com)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Screenshots
+![](https://user-images.githubusercontent.com/23380926/31803789-a9e4c91e-b590-11e7-83ad-924a1fde5504.png)
+![](https://user-images.githubusercontent.com/23380926/31803792-aac3cbd2-b590-11e7-80ba-8b781f77939d.png)
+![](https://user-images.githubusercontent.com/23380926/31803794-abe7833c-b590-11e7-9be7-965d7ceb9875.png)
